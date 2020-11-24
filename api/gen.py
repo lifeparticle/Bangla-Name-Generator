@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler
 from datetime import datetime
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 
 class handler(BaseHTTPRequestHandler):
 
