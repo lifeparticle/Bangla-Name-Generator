@@ -8,6 +8,7 @@ class handler(BaseHTTPRequestHandler):
     print (self.path)
     s = self.path
     print (parse_qs(s[2:]))
+    print("-----------------")
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
