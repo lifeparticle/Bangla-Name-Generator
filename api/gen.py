@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
   def do_GET(self):
     print (self.path)
     s = self.path
-    print parse_qs(s[2:])
+    print (parse_qs(s[2:]))
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
