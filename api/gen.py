@@ -1,13 +1,13 @@
 from http.server import BaseHTTPRequestHandler
 from datetime import datetime
-import urllib.parse
+from urllib.parse import urlparse
 
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
     print (self.path)
     s = self.path
-    print(urllib.parse.parse_qs(s[2:]))
+    print(urlparse(s))
     print("-----------------")
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
