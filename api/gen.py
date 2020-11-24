@@ -4,7 +4,7 @@ from datetime import datetime
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
-    print (self)
+    print (self.path)
     print (self.request)
     #print (self.request.get('gender'))
     self.send_response(200)
