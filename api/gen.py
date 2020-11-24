@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
   def do_GET(self):
     print (self.path)
     s = self.path
-    print(urlparse(s).query)
+    print(urlparse(s).query('gender'))
     print("-----------------")
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
