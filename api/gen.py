@@ -5,7 +5,7 @@ from urllib.parse import urlparse, parse_qs
 
 class handler(BaseHTTPRequestHandler):
     
-    def name_gen(self,key):
+    def name_gen(self, key):
           key = key.lower()
           if key == 'male':
             first_names = 'api/male_first_names.txt'
@@ -20,27 +20,26 @@ class handler(BaseHTTPRequestHandler):
           f = open(str(last_names), "r")
           last_names = f.read().split()
 
-          length1 = len(first_names)
-          length2 = len(last_names)
-          first_index = rand.randint(0,length1)
-          last_index = rand.randint(0,length2)
+          first_names_size = len(first_names)
+          last_names_size = len(last_names)
+          first_index = rand.randint(0, first_names_size)
+          last_index = rand.randint(0, last_names_size)
 
           name = first_names[first_index]+" "+last_names[last_index]
           output = {key:name}
 
-          json1 = json.dumps(output,ensure_ascii = False)
-
-          return json1
+          json_value = json.dumps(output, ensure_ascii = False)
+          return json_value
     
     def do_GET(self):
         s = self.path
         gen = parse_qs(urlparse(s).query)['gender'][0]
         self.send_response(200)
         self.send_header('Content-type','application/json; charset=utf-8')
-        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
         output = self.name_gen(gen)
-        json1 = json.dumps(output,ensure_ascii=False)
-        message = json.loads(json1)
-        self.wfile.write(message.encode('utf8'))
+        json_value = json.dumps(output, ensure_ascii = False)
+        result = json.loads(json_value)
+        self.wfile.write(result.encode('utf8'))
         return
