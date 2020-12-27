@@ -26,22 +26,26 @@ class handler(BaseHTTPRequestHandler):
 		last_index = rand.randint(0, last_names_size)
 
 		name = first_names[first_index]+" "+last_names[last_index]
-		output = {key:name}
+		output = {key : name}
 
-		return output
+		return json.dumps(output, ensure_ascii=False)
 
 	def do_GET(self):
 		s = self.path
 		dic = dict(parse.parse_qsl(parse.urlsplit(s).query))
-		self.send_response(200)
+
+		if "gender" in dic:
+			self.send_response(200)
+			output = self.name_gen(dic["gender"])
+		else:
+			self.send_response(404)
+			data = {}
+			data['error'] = 'param missing'
+			output = json.dumps(data)
+
 		self.send_header('Content-type','application/json; charset=utf-8')
 		self.send_header('Access-Control-Allow-Origin', '*')
 		self.end_headers()
-
-		if "gender" in dic:
-			output = self.name_gen(dic["gender"])
-		else:
-			output = "param missing"
 
 		json_value = json.dumps(output, ensure_ascii = False)
 		result = json.loads(json_value)
