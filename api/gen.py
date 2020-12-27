@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 import json
 import random as rand
-from urllib.parse import urlparse, parse_qs
+from urllib import parse
 
 class handler(BaseHTTPRequestHandler):
     
@@ -33,12 +33,17 @@ class handler(BaseHTTPRequestHandler):
     
     def do_GET(self):
         s = self.path
-        gen = parse_qs(urlparse(s).query)['gender'][0]
+		dic = dict(parse.parse_qsl(parse.urlsplit(s).query))
         self.send_response(200)
         self.send_header('Content-type','application/json; charset=utf-8')
         self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
-        output = self.name_gen(gen)
+        
+        if "gender" in dic:
+            output = self.name_gen(dic["gender"])
+        else:
+            output = "param missing"
+            
         json_value = json.dumps(output, ensure_ascii = False)
         result = json.loads(json_value)
         self.wfile.write(result.encode('utf8'))
