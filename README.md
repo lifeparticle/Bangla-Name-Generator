@@ -13,7 +13,8 @@ https://bangla-name-generator.vercel.app/api/gen?gender=male
 https://bangla-name-generator.vercel.app/api/gen?gender=female
 ```
 
-# Resources
+Resources
+============
 1. https://github.com/dipta-dhar/BanglaNameMaker
 2. https://github.com/faruk-ahmad/bengali-female-vs-male-names
 
