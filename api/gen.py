@@ -44,10 +44,6 @@ class handler(BaseHTTPRequestHandler):
 			data['error'] = 'param missing'
 			output = json.dumps(data)
 
-		self.send_header('Content-type','application/json; charset=utf-8')
-		self.send_header('Access-Control-Allow-Origin', '*')
-		self.end_headers()
-
 		json_value = json.dumps(output, ensure_ascii = False)
 		result = json.loads(json_value)
 		self.wfile.write(result.encode('utf8'))

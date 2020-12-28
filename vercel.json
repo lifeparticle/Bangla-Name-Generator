@@ -1,0 +1,17 @@
+{
+	"headers": [
+		{
+			"source": "/api/gen.py",
+			"headers" : [
+				{
+					"key" : "Content-Type",
+					"value" : "application/json; charset=utf-8"
+				},
+				{
+					"key" : "Access-Control-Allow-Origin",
+					"value" : "*"
+				}
+			]
+		}
+	]
+}
