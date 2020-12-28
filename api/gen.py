@@ -1,7 +1,8 @@
 from http.server import BaseHTTPRequestHandler
-import json
-import random as rand
+from os.path import join
 from urllib import parse
+import random as rand
+import json
 
 class handler(BaseHTTPRequestHandler):
 
