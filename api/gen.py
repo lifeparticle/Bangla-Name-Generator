@@ -8,16 +8,16 @@ class handler(BaseHTTPRequestHandler):
 	def name_gen(self, key):
 		key = key.lower()
 		if key == 'male':
-			first_names = 'api/male_first_names.txt'
+			first_names = 'male_first_names.txt'
 		elif key == 'female':
-			first_names = 'api/female_first_names.txt'
+			first_names = 'female_first_names.txt'
 
-		last_names = 'api/last_names.txt'
+		last_names = 'last_names.txt'
 
-		f = open(str(first_names), "r")
+		f = open(join('data', first_names), "r")
 		first_names = f.read().split()
 
-		f = open(str(last_names), "r")
+		f = open(join('data', last_names), "r")
 		last_names = f.read().split()
 
 		first_names_size = len(first_names)
