@@ -6,7 +6,7 @@
 
     3.1.
     ```bash
-    git remote add upstream git@github.com:lifeparticle/Bengali-Alphabet.git
+    git remote add upstream git@github.com:lifeparticle/Bangla-Name-Generator.git
     ```
 
     3.2.
@@ -46,7 +46,7 @@
 
    5.2 If you're haveing problem finding the url
 
-       a) https://github.com/lifeparticle/Bengali-Alphabet/pulls
+       a) https://github.com/lifeparticle/Bangla-Name-Generator/pulls
 
        b) Click the button 'New pull request'
 
