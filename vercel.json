@@ -1,17 +1,7 @@
 {
-	"headers": [
-		{
-			"source": "/api/gen.py",
-			"headers" : [
-				{
-					"key" : "Content-Type",
-					"value" : "application/json; charset=utf-8"
-				},
-				{
-					"key" : "Access-Control-Allow-Origin",
-					"value" : "*"
-				}
-			]
-		}
-	]
+  "functions": {
+    "api/gen.py": {
+      "runtime": "@vercel/python@1.2.3"
+    }
+  }
 }
