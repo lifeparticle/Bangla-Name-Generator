@@ -16,6 +16,8 @@ https://bangla-name-generator.vercel.app/api/gen?gender=female
 # Resources
 1. https://vercel.com/docs/runtimes#advanced-usage/advanced-python-usage
 2. https://www.npmjs.com/package/@vercel/python
+3. https://github.com/dipta-dhar/BanglaNameMaker
+4. https://github.com/faruk-ahmad/bengali-female-vs-male-names
 
 Bug Reports and Feature Requests
 ============
