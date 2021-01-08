@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/gen.py": {
+    "api/*.py": {
       "runtime": "@vercel/python@1.2.3"
     }
   }
